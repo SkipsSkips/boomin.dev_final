@@ -29,10 +29,9 @@
     box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
   }
 }
-
-.hero-title {
-  position: relative;
-  z-index: 2;
+.hero-title, 
+.hero-content h1 {
+  line-height: 1.1; /* or try 1.15 or 1.2 if needed */
 }
 
 .hero-gradient {
