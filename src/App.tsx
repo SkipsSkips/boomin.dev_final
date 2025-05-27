@@ -160,7 +160,7 @@ function App() {
               </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight">
                 Elevate Your Brand with
-                <span className="gradient-text block mt-2 pb-2">Boomin' Web Design</span>
+                <span className="gradient-text block mt-2 pb-4">Boomin' Web Design</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Let's make your business boom online with stunning, high-performance websites that captivate your audience and drive real results.
