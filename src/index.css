@@ -30,6 +30,11 @@
   }
 }
 
+.hero-title {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-gradient {
   background: linear-gradient(135deg, #1E1E1E 0%, #1e293b 100%);
 }
