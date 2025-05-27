@@ -166,8 +166,8 @@ button:focus-visible {
   }
 
   .close-btn {
-    top: 4rem !important;    /* Move further down */
-    right: 2.4rem !important;  /* Move a bit more left */
+    top: 6rem !important;      /* Move further down */
+    right: 4rem !important;    /* Move further left */
     z-index: 1100;
   }
 }
