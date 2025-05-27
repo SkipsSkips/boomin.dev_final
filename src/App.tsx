@@ -405,7 +405,7 @@ function App() {
               </div>
               <div className="flex flex-col items-end">
                 <img
-                  src="../img/logo-full.png" // updated path
+                  src="./img/logo-full.png" // updated path
                   alt="Boomin Full Logo"
                   style={{
                     height: '70px',
