@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+  }
+
+  .gradient-border {
+    @apply shadow-lg;
+    position: relative;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .gradient-border:hover {
+    @apply shadow-2xl transform -translate-y-1;
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #1E1E1E 0%, #1e293b 100%);
+}
+
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.scale-hover {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.glass-effect {
+  @apply backdrop-blur-lg bg-white/90;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+}
+
+.button-gradient {
+  background: linear-gradient(45deg, #2563eb, #4f46e5);
+  @apply shadow-lg transition-all duration-300;
+}
+
+.button-gradient:hover {
+  @apply shadow-xl transform -translate-y-0.5;
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+}
+
+.stats-gradient {
+  background: linear-gradient(45deg, rgba(37, 99, 235, 0.1), rgba(79, 70, 229, 0.1));
+  @apply backdrop-blur-sm;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+input, textarea {
+  @apply border border-gray-300 px-4 py-2 shadow-sm transition-all duration-300;
+}
+
+input:focus, textarea:focus {
+  @apply outline-none ring-2 ring-blue-600 ring-opacity-50 border-transparent;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.input-gradient-border {
+  @apply border-2 border-transparent bg-clip-padding;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(45deg, #2563eb, #4f46e5);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}

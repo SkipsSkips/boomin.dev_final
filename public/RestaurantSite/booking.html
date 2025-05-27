@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table - Mythos Greek Restaurant</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Enhance Booking page styling -->
+    <style>
+        /* Booking page specific styles */
+        .page-header {
+            background: url('images/greek2.jpg') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(38, 70, 83, 0.7); /* Dark Sea Blue with transparency */
+        }
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        .booking-section {
+            padding: 80px 0;
+        }
+        .booking-decoration {
+            margin-bottom: 40px;
+        }
+        .decoration-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .decoration-image {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .decoration-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .booking-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--accent-color);
+        }
+        .booking-confirmation {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--secondary-color);
+            margin-top: 30px;
+        }
+        .booking-confirmation.active {
+            display: block;
+        }
+        .booking-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .booking-details p {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .booking-details p:last-child {
+            border-bottom: none;
+        }
+        .booking-details span {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .policy-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .policy-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .policy-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        @media (max-width: 768px) {
+            .policies-grid {
+                grid-template-columns: 1fr;
+            }
+            .decoration-images {
+                flex-direction: column;
+                align-items: center;
+            }
+            .decoration-image {
+                width: 80%;
+                height: 150px;
+            }
+        }
+        .section-title, h3 {
+            color: var(--accent-color);
+        }
+        .booking-confirmation h3 {
+            color: var(--accent-color);
+        }
+        .policy-item h4 {
+            color: var(--dark-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Update navigation by removing Order button and updating links -->
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="booking.html" class="active">To book</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="logo-link"><h1 class="logo">Mythos</h1></a>
+            <nav class="nav-right">
+                <ul>
+                    <li><a href="tel:+1234567890">123-456-7890</a></li>
+                    <li><a href="booking.html" class="voucher-btn">Make a reservation</a></li>
+                    <li><a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                    <li><a href="#instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#language"><i class="fas fa-globe"></i></a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <!-- Update mobile menu by removing Order button and updating links -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="booking.html">To book</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:+1234567890">123-456-7890</a></li>
+                <li><a href="booking.html">Make a reservation</a></li>
+            </ul>
+            <div class="mobile-social">
+                <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#language"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content" data-aos="fade-up">
+            <h1>Book a Table</h1>
+            <p>Reserve your table at Mythos and experience the authentic taste of Greece in a warm and welcoming atmosphere</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-info" data-aos="fade-up">
+                <h2 class="section-title">Make a Reservation</h2>
+                <p>We look forward to welcoming you to Mythos. To ensure we can provide you with the best possible experience, please complete the booking form below. For parties larger than 8 people, please call us directly at <a href="tel:+1234567890">123-456-7890</a>.</p>
+            </div>
+
+            <!-- Add decorative images -->
+            <div class="booking-decoration" data-aos="fade-up" data-aos-delay="100">
+                <div class="decoration-images">
+                    <img src="images/greek1.jpg" alt="Restaurant interior" class="decoration-image">
+                    <img src="images/greek2.jpg" alt="Greek dish" class="decoration-image">
+                    <img src="images/greek3.jpg" alt="Restaurant atmosphere" class="decoration-image">
+                </div>
+            </div>
+
+            <div class="booking-form-container" data-aos="fade-up" data-aos-delay="200">
+                <form id="booking-form" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" name="guests" class="form-select" required>
+                                <option value="" disabled selected>Select number of guests</option>
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                                <option value="7">7 people</option>
+                                <option value="8">8 people</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <select id="time" name="time" class="form-select" required>
+                                <option value="" disabled selected>Select time</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occasion">Special Occasion (Optional)</label>
+                        <select id="occasion" name="occasion" class="form-select">
+                            <option value="" selected>Select if applicable</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="business">Business Dinner</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests (Optional)</label>
+                        <textarea id="special-requests" name="special-requests" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="form-submit">Book Now</button>
+                    </div>
+                </form>
+
+                <div id="booking-confirmation" class="booking-confirmation">
+                    <h3>Thank You for Your Reservation!</h3>
+                    <p>We have received your booking request and will confirm your reservation shortly.</p>
+                    <div class="booking-details">
+                        <p>Name: <span id="confirm-name"></span></p>
+                        <p>Date: <span id="confirm-date"></span></p>
+                        <p>Time: <span id="confirm-time"></span></p>
+                        <p>Guests: <span id="confirm-guests"></span></p>
+                    </div>
+                    <p>A confirmation email has been sent to <span id="confirm-email"></span>.</p>
+                </div>
+            </div>
+            
+            <!-- Add restaurant policies -->
+            <div class="booking-policies" data-aos="fade-up" data-aos-delay="300">
+                <h3>Reservation Policies</h3>
+                <div class="policies-grid">
+                    <div class="policy-item">
+                        <i class="fas fa-clock"></i>
+                        <h4>Arrival Time</h4>
+                        <p>Please arrive within 15 minutes of your reservation time. Tables may be released after this period.</p>
+                    </div>
+                    <div class="policy-item">
+                        <i class="fas fa-ban"></i>
+                        <h4>Cancellation</h4>
+                        <p>Please notify us at least 4 hours in advance if you need to cancel or modify your reservation.</p>
+                    </div>
+                    <div class="policy-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Large Groups</h4>
+                        <p>For parties of 8 or more, please contact us directly to arrange your reservation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Schedule Section to booking page -->
+<section class="schedule-section" id="schedule">
+    <div class="container">
+        <div class="schedule-container">
+            <div class="schedule-content" data-aos="fade-right">
+                <h2 class="section-title">Our Opening Hours</h2>
+                <p>Please check our opening hours below when planning your visit. We recommend making a reservation, especially for weekend dining.</p>
+                <p>On Fridays and Saturdays, we're open an hour later so you can enjoy your evening with us a little longer. For special occasions or large groups, please call us directly.</p>
+            </div>
+            <div class="schedule-table-container" data-aos="fade-left">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>16:30 - 22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>16:30 - 22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>16:30 - 22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>16:30 - 22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td class="day-highlight">16:30 - 23:00</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td class="day-highlight">16:30 - 23:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>16:30 - 22:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact and Schedule Section -->
+    <section id="contact" class="contact-schedule">
+        <div class="container">
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="100">
+                <div class="logo-container">
+                    <h3 class="logo">Mythos</h3>
+                </div>
+                <div class="follow-us">
+                    <h3>Follow us</h3>
+                    <div class="social-icons">
+                        <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="200">
+                <h3>Contact details</h3>
+                <p>Restaurant Mythos</p>
+                <a href="tel:+1234567890" class="contact-link">123-456-7890</a>
+                <a href="mailto:info@mythos.com" class="contact-link">info@mythos.com</a>
+            </div>
+            
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="300">
+                
+    <h3>Contact Us</h3>
+    <p>We'd love to hear from you! Feel free to reach out with any questions or feedback.</p>
+    <a href="contact.html" class="contact-link">Visit our contact page</a>
+    <a href="tel:+1234567890" class="contact-link">123-456-7890</a>
+    <a href="mailto:info@mythos.com" class="contact-link">info@mythos.com</a>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Mythos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Booking form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            
+            // Update confirmation details
+            document.getElementById('confirm-name').textContent = name;
+            document.getElementById('confirm-email').textContent = email;
+            document.getElementById('confirm-date').textContent = new Date(date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('confirm-time').textContent = time;
+            document.getElementById('confirm-guests').textContent = guests + (guests === '1' ? ' person' : ' people');
+            
+            // Hide form and show confirmation
+            document.getElementById('booking-form').style.display = 'none';
+            document.getElementById('booking-confirmation').classList.add('active');
+            
+            // Scroll to confirmation
+            document.getElementById('booking-confirmation').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+        
+        // Header hide/show on scroll
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
+

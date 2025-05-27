@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythos - Authentic Greek Restaurant</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: url('images/header-bg.jpg') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        .parallax-section {
+            background: url('images/greek1.jpg') no-repeat center 30% fixed;
+            background-size: cover;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            min-height: 400px; /* Fixed from 500% to 500px */
+            z-index: 1;
+        }
+        
+        .parallax-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(38, 70, 83, 0.7); /* Dark Sea Blue with transparency */
+            z-index: -1;
+        }
+        
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .parallax-content h2,
+        .parallax-content p {
+            background: transparent !important;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger text shadow */
+        }
+        
+        .section-title {
+            color: var(--accent-color);
+            font-family: "Playfair Display", serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="nav-left">
+    <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="booking.html">To book</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<a href="index.html" class="logo-link"><h1 class="logo">Mythos</h1></a>
+<nav class="nav-right">
+                <ul>
+                    <li><a href="tel:+1234567890">123-456-7890</a></li>
+                    <li><a href="booking.html" class="voucher-btn">Make a reservation</a></li>
+                    <li><a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                    <li><a href="#instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#language"><i class="fas fa-globe"></i></a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="mobile-menu">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="booking.html">To book</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:+1234567890">123-456-7890</a></li>
+        <li><a href="booking.html">Make a reservation</a></li>
+    </ul>
+    <div class="mobile-social">
+        <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#language"><i class="fas fa-globe"></i></a>
+    </div>
+</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+            <h2>Experience the <span class="highlight">authentic</span> taste of Greece</h2>
+            <p class="hero-subtitle">Traditional recipes with a modern twist</p>
+            <div class="hero-buttons">
+                <a href="booking.html" class="btn btn-primary">Reserve a table</a>
+                <a href="menu.html" class="btn btn-secondary">View our menu</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="images/greek1.jpg" alt="Mythos Greek Restaurant signature dish" class="hero-image">
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Why Choose Mythos</h2>
+        <div class="featured-grid">
+            <div class="featured-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="featured-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Authentic Cuisine</h3>
+                <p>Traditional recipes passed down through generations, prepared with imported Greek ingredients and local produce for the perfect Mediterranean experience.</p>
+            </div>
+            <div class="featured-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="featured-icon">
+                    <i class="fas fa-wine-glass-alt"></i>
+                </div>
+                <h3>Fine Wines</h3>
+                <p>Curated selection of Greek and Mediterranean wines, carefully paired with our dishes to enhance your dining experience and transport you to the Greek isles.</p>
+            </div>
+            <div class="featured-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="featured-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Scenic Location</h3>
+                <p>Beautiful atmosphere with Mediterranean-inspired decor, creating the perfect ambiance for a romantic dinner, family gathering, or special celebration.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-content">
+            <h2 data-aos="zoom-in">A Taste of the Mediterranean</h2>
+            <p data-aos="zoom-in" data-aos-delay="200">Every dish tells a story of Greek tradition</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Delicious Cuisine</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/greek2.jpg" alt="Traditional Greek dish">
+                    <div class="gallery-caption">Traditional Greek Salad</div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/greek3.jpg" alt="Grilled souvlaki skewers">
+                    <div class="gallery-caption">Souvlaki Platter</div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/greek4.jpg" alt="Moussaka dish">
+                    <div class="gallery-caption">Homemade Moussaka</div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/greek5.jpg" alt="Greek dessert">
+                    <div class="gallery-caption">Sweet Baklava</div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/greek6.jpg" alt="Restaurant interior">
+                    <div class="gallery-caption">Our Cozy Atmosphere</div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/greek7.jpg" alt="Seafood platter">
+                    <div class="gallery-caption">Fresh Seafood</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section" id="schedule">
+        <div class="container">
+            <div class="schedule-container">
+                <div class="schedule-content" data-aos="fade-right">
+                    <h2 class="section-title">Opening Hours</h2>
+                    <p>We're open every day of the week to serve you the finest Greek cuisine. Join us for dinner or just stop by for a glass of wine and some mezze.</p>
+                    <p>For large parties or special events, we recommend making a reservation in advance to ensure we can provide you with the best possible experience.</p>
+                    <a href="booking.html" class="btn btn-primary">Reserve a Table</a>
+                </div>
+                <div class="schedule-table-container" data-aos="fade-left">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>16:30 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td>16:30 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>16:30 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>16:30 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td class="day-highlight">16:30 - 23:00</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td class="day-highlight">16:30 - 23:00</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>16:30 - 22:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">What Our Guests Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>The most authentic Greek food I've had outside of Greece. The moussaka was absolutely divine!</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Maria K.</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>Incredible atmosphere and even better food. The staff made us feel like family. We'll definitely be back!</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">John D.</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>The seafood platter was fresh and perfectly prepared. Mythos has become our favorite date night spot!</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Sarah & Michael</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content" data-aos="fade-right">
+                <h2 class="section-title">About Mythos</h2>
+                <p>At Mythos, we bring the authentic flavors of Greece to your table. Our recipes have been passed down through generations, preserving the traditional tastes of the Mediterranean. We use only the freshest ingredients, imported olive oils, and authentic spices to create an unforgettable dining experience.</p>
+                <p>Our chefs have trained in Greece and bring their expertise to every dish they prepare. From classic moussaka to fresh seafood and tender souvlaki, every bite tells the story of Greek culinary tradition.</p>
+                <a href="booking.html" class="btn btn-primary">Experience Mythos</a>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="images/greek8.jpg" alt="Chef preparing traditional Greek food">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact and Schedule Section -->
+    <section id="contact" class="contact-schedule">
+        <div class="container">
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="100">
+                <div class="logo-container">
+                    <h3 class="logo">Mythos</h3>
+                </div>
+                <div class="follow-us">
+                    <h3>Follow us</h3>
+                    <div class="social-icons">
+                        <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="200">
+            <h3>Contact details</h3>
+            <p>Restaurant Mythos</p>
+            <p>123 Mediterranean Avenue<br>Cityville, State 12345</p>
+            <a href="tel:+1234567890" class="contact-link">123-456-7890</a>
+            <a href="mailto:info@mythos.com" class="contact-link">info@mythos.com</a>
+        </div>
+            
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="300">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="booking.html">To book</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Mythos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Remove testimonial controls script since we're showing all at once -->
+<script>
+    // Initialize AOS animation library
+    AOS.init({
+        once: true
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+        document.querySelector('.mobile-menu').classList.toggle('active');
+        this.querySelector('i').classList.toggle('fa-bars');
+        this.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Adjusted parallax effect with initial offset
+    window.addEventListener('scroll', function() {
+        const parallax = document.querySelector('.parallax-section');
+        if (parallax) {
+            const scrollPosition = window.pageYOffset;
+            // Start with image positioned 30% down and add subtle parallax
+            parallax.style.backgroundPositionY = (30 + (scrollPosition * 0.05)) + '%';
+        }
+    });
+    
+    // Header hide/show on scroll
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down
+            header.classList.add('hidden');
+        } else {
+            // Scrolling up
+            header.classList.remove('hidden');
+        }
+        
+        if (scrollTop > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+</script>
+</body>
+</html>
+

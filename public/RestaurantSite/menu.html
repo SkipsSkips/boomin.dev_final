@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Mythos Greek Restaurant</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .page-header {
+            background: url('images/greek2.jpg') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(38, 70, 83, 0.7); /* Dark Sea Blue with transparency */
+        }
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        .menu-category-title {
+            color: var(--accent-color);
+        }
+        .section-title {
+            color: var(--accent-color);
+        }
+        .menu-item-title {
+            color: var(--dark-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Update navigation by removing Order button and updating links -->
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#menu" class="active">Menu</a></li>
+                    <li><a href="booking.html">To book</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="logo-link"><h1 class="logo">Mythos</h1></a>
+            <nav class="nav-right">
+                <ul>
+                    <li><a href="tel:+1234567890">123-456-7890</a></li>
+                    <li><a href="booking.html" class="voucher-btn">Make a reservation</a></li>
+                    <li><a href="#facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#language"><i class="fas fa-globe"></i></a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <!-- Update mobile menu by removing Order button and updating links -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="booking.html">To book</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:+1234567890">123-456-7890</a></li>
+                <li><a href="booking.html">Make a reservation</a></li>
+            </ul>
+            <div class="mobile-social">
+                <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#language"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content" data-aos="fade-up">
+            <h1>Our Menu</h1>
+            <p>Discover the authentic flavors of Greece with our carefully crafted dishes made from traditional recipes and the freshest ingredients</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-container">
+        <div class="container">
+            <div class="menu-tabs" data-aos="fade-up">
+                <button class="menu-tab active" data-tab="starters">Starters</button>
+                <button class="menu-tab" data-tab="main-courses">Main Courses</button>
+                <button class="menu-tab" data-tab="seafood">Seafood</button>
+                <button class="menu-tab" data-tab="desserts">Desserts</button>
+                <button class="menu-tab" data-tab="drinks">Drinks</button>
+            </div>
+
+            <div class="menu-content active" id="starters" data-aos="fade-up">
+                <div class="menu-category">
+                    <h2 class="menu-category-title">Appetizers</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek3.jpg" alt="Greek Salad">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Greek Salad</h3>
+                                    <span class="menu-item-price">€8.50</span>
+                                </div>
+                                <p class="menu-item-description">Fresh tomatoes, cucumber, red onion, olives, and feta cheese drizzled with extra virgin olive oil and oregano.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek4.jpg" alt="Tzatziki">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Tzatziki</h3>
+                                    <span class="menu-item-price">€6.00</span>
+                                </div>
+                                <p class="menu-item-description">Creamy yogurt dip with cucumber, garlic, and fresh herbs, served with warm pita bread.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek5.jpg" alt="Spanakopita">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Spanakopita</h3>
+                                    <span class="menu-item-price">€7.50</span>
+                                </div>
+                                <p class="menu-item-description">Flaky phyllo pastry filled with spinach, feta cheese, and herbs.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek6.jpg" alt="Dolmades">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Dolmades</h3>
+                                    <span class="menu-item-price">€7.00</span>
+                                </div>
+                                <p class="menu-item-description">Grape leaves stuffed with rice, pine nuts, and fresh herbs, served with tzatziki sauce.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h2 class="menu-category-title">Dips & Spreads</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek7.jpg" alt="Hummus">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Hummus</h3>
+                                    <span class="menu-item-price">€5.50</span>
+                                </div>
+                                <p class="menu-item-description">Creamy chickpea dip with tahini, lemon, and garlic, served with warm pita bread.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek8.jpg" alt="Taramasalata">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Taramasalata</h3>
+                                    <span class="menu-item-price">€6.50</span>
+                                </div>
+                                <p class="menu-item-description">Traditional Greek fish roe dip blended with olive oil, lemon juice, and bread crumbs.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek1.jpg" alt="Melitzanosalata">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Melitzanosalata</h3>
+                                    <span class="menu-item-price">€6.00</span>
+                                </div>
+                                <p class="menu-item-description">Smoky eggplant dip with garlic, olive oil, and lemon juice.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegan</span>
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek2.jpg" alt="Tirokafteri">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Tirokafteri</h3>
+                                    <span class="menu-item-price">€6.50</span>
+                                </div>
+                                <p class="menu-item-description">Spicy feta cheese dip with roasted red peppers and olive oil.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more menu items to the Main Courses section -->
+            <div class="menu-content" id="main-courses">
+                <div class="menu-category">
+                    <h2 class="menu-category-title">From the Grill</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek3.jpg" alt="Souvlaki Platter">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Souvlaki Platter</h3>
+                                    <span class="menu-item-price">€16.50</span>
+                                </div>
+                                <p class="menu-item-description">Grilled skewers of marinated pork or chicken served with pita bread, tzatziki, and Greek salad.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek4.jpg" alt="Mixed Grill">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Mixed Grill</h3>
+                                    <span class="menu-item-price">€22.50</span>
+                                </div>
+                                <p class="menu-item-description">A selection of grilled meats including lamb chops, chicken, and pork, served with roasted vegetables and lemon potatoes.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek5.jpg" alt="Lamb Chops">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Lamb Chops</h3>
+                                    <span class="menu-item-price">€19.50</span>
+                                </div>
+                                <p class="menu-item-description">Tender grilled lamb chops marinated in olive oil, lemon, and herbs, served with roasted potatoes and tzatziki.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek6.jpg" alt="Gyros Plate">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Gyros Plate</h3>
+                                    <span class="menu-item-price">€15.50</span>
+                                </div>
+                                <p class="menu-item-description">Thinly sliced seasoned meat served with pita bread, tzatziki, tomatoes, onions, and fries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h2 class="menu-category-title">Traditional Favorites</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek7.jpg" alt="Moussaka">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Moussaka</h3>
+                                    <span class="menu-item-price">€14.50</span>
+                                </div>
+                                <p class="menu-item-description">Layers of eggplant, potatoes, and seasoned ground beef topped with creamy béchamel sauce.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek8.jpg" alt="Pastitsio">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Pastitsio</h3>
+                                    <span class="menu-item-price">€13.50</span>
+                                </div>
+                                <p class="menu-item-description">Greek pasta baked with seasoned ground beef and topped with creamy béchamel sauce.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek1.jpg" alt="Gemista">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Gemista</h3>
+                                    <span class="menu-item-price">€12.50</span>
+                                </div>
+                                <p class="menu-item-description">Tomatoes and bell peppers stuffed with rice, herbs, and pine nuts, served with lemon potatoes.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek2.jpg" alt="Kleftiko">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Kleftiko</h3>
+                                    <span class="menu-item-price">€18.50</span>
+                                </div>
+                                <p class="menu-item-description">Slow-cooked lamb with garlic, lemon, and herbs, wrapped in parchment paper and served with roasted vegetables.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Seafood section content -->
+            <div class="menu-content" id="seafood">
+                <div class="menu-category">
+                    <h2 class="menu-category-title">Fresh from the Sea</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek3.jpg" alt="Grilled Octopus">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Grilled Octopus</h3>
+                                    <span class="menu-item-price">€18.50</span>
+                                </div>
+                                <p class="menu-item-description">Tender octopus marinated in olive oil, lemon, and oregano, chargrilled to perfection.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek4.jpg" alt="Seafood Platter">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Seafood Platter</h3>
+                                    <span class="menu-item-price">€26.50</span>
+                                </div>
+                                <p class="menu-item-description">A selection of grilled fish, calamari, shrimp, and mussels served with lemon-garlic sauce and rice.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek5.jpg" alt="Grilled Sea Bass">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Grilled Sea Bass</h3>
+                                    <span class="menu-item-price">€22.50</span>
+                                </div>
+                                <p class="menu-item-description">Fresh sea bass grilled with olive oil, lemon, and herbs, served with steamed vegetables.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek6.jpg" alt="Calamari">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Calamari</h3>
+                                    <span class="menu-item-price">€14.50</span>
+                                </div>
+                                <p class="menu-item-description">Lightly fried calamari served with lemon wedges and garlic aioli.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Desserts section content -->
+            <div class="menu-content" id="desserts">
+                <div class="menu-category">
+                    <h2 class="menu-category-title">Sweet Endings</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek7.jpg" alt="Baklava">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Baklava</h3>
+                                    <span class="menu-item-price">€6.50</span>
+                                </div>
+                                <p class="menu-item-description">Layers of phyllo pastry filled with chopped nuts and sweetened with honey syrup.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek8.jpg" alt="Galaktoboureko">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Galaktoboureko</h3>
+                                    <span class="menu-item-price">€6.00</span>
+                                </div>
+                                <p class="menu-item-description">Creamy custard wrapped in golden phyllo pastry and soaked in sweet syrup.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek1.jpg" alt="Loukoumades">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Loukoumades</h3>
+                                    <span class="menu-item-price">€5.50</span>
+                                </div>
+                                <p class="menu-item-description">Greek honey puffs topped with honey syrup, cinnamon, and crushed walnuts.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek2.jpg" alt="Greek Yogurt">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Greek Yogurt with Honey</h3>
+                                    <span class="menu-item-price">€5.00</span>
+                                </div>
+                                <p class="menu-item-description">Creamy Greek yogurt drizzled with honey and topped with walnuts.</p>
+                                <div class="menu-item-tags">
+                                    <span class="menu-item-tag">Vegetarian</span>
+                                    <span class="menu-item-tag">Gluten-free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Drinks section content -->
+            <div class="menu-content" id="drinks">
+                <div class="menu-category">
+                    <h2 class="menu-category-title">Greek Wines</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek3.jpg" alt="Assyrtiko">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Assyrtiko (White)</h3>
+                                    <span class="menu-item-price">€8.50 / €32.00</span>
+                                </div>
+                                <p class="menu-item-description">Crisp and mineral white wine from Santorini with citrus notes.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek4.jpg" alt="Agiorgitiko">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Agiorgitiko (Red)</h3>
+                                    <span class="menu-item-price">€7.50 / €28.00</span>
+                                </div>
+                                <p class="menu-item-description">Medium-bodied red wine with notes of red fruits and spices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h2 class="menu-category-title">Traditional Drinks</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek5.jpg" alt="Ouzo">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Ouzo</h3>
+                                    <span class="menu-item-price">€5.00</span>
+                                </div>
+                                <p class="menu-item-description">Traditional Greek anise-flavored aperitif.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/greek6.jpg" alt="Greek Coffee">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3 class="menu-item-title">Greek Coffee</h3>
+                                    <span class="menu-item-price">€3.50</span>
+                                </div>
+                                <p class="menu-item-description">Strong, rich coffee served in a small cup with foam on top.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact and Schedule Section -->
+    <section id="contact" class="contact-schedule">
+        <div class="container">
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="100">
+                <div class="logo-container">
+                    <h3 class="logo">Mythos</h3>
+                </div>
+                <div class="follow-us">
+                    <h3>Follow us</h3>
+                    <div class="social-icons">
+                        <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="200">
+                <h3>Contact details</h3>
+                <p>Restaurant Mythos</p>
+                <a href="tel:+1234567890" class="contact-link">123-456-7890</a>
+                <a href="mailto:info@mythos.com" class="contact-link">info@mythos.com</a>
+            </div>
+            
+            <div class="contact-column" data-aos="fade-up" data-aos-delay="300">
+                <h3>Contact Us</h3>
+                <p>We'd love to hear from you! Feel free to reach out with any questions or feedback.</p>
+                <a href="contact.html" class="contact-link">Visit our contact page</a>
+                <a href="tel:+1234567890" class="contact-link">123-456-7890</a>
+                <a href="mailto:info@mythos.com" class="contact-link">info@mythos.com</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Mythos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Menu tabs functionality
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuContents = document.querySelectorAll('.menu-content');
+
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                menuTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all content sections
+                menuContents.forEach(content => content.classList.remove('active'));
+                
+                // Show the corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Header hide/show on scroll
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
+

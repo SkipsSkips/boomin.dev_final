@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Certified Icon</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle fill="#0A2463" cx="16" cy="14" r="12"></circle>
+        <path d="M16,26 L16,32 M12,28 L16,26 L20,28" stroke="#0A2463" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M21,12 L14.5,18.5 L11,15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>
