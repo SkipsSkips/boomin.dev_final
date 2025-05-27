@@ -156,3 +156,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+@media (max-width: 600px) {
+  #hero {
+    min-height: 40rem;
+    height: 60vh;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+  }
+}
