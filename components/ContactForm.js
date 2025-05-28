@@ -87,7 +87,7 @@ const ContactForm = () => {
           disabled={isSubmitting}
           className="w-full button-gradient text-white py-4 px-8 rounded-lg text-lg font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/40 transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? "Se trimite..." : "Trimite"}
+          {isSubmitting ? "Sending..." : "Send"}
         </button>
       </form>
       
