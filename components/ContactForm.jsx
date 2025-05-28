@@ -53,7 +53,7 @@ const ContactForm = () => {
       setStatus({
         submitted: true,
         success: true,
-        message: "The message has been sent! Check your email for confirmation."
+        message: "The message has been sent! Please check your email for confirmation."
       });
       form.current.reset();
     } catch (error) {
