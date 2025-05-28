@@ -26,7 +26,7 @@ const ContactForm = () => {
       setStatus({
         submitted: true,
         success: true,
-        message: "Mesajul a fost trimis! Verificați email-ul pentru confirmare."
+        message: "The message has been sent! Please check your email for confirmation"
       });
       form.current.reset();
     } catch (error) {
@@ -34,7 +34,7 @@ const ContactForm = () => {
       setStatus({
         submitted: true,
         success: false,
-        message: "A apărut o eroare. Încercați din nou."
+        message: "An error occurred. Please try again"
       });
     } finally {
       setIsSubmitting(false);
