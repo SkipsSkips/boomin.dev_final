@@ -42,7 +42,7 @@ const ContactForm = () => {
       setStatus({
         submitted: true,
         success: false,
-        message: "Toate câmpurile sunt obligatorii."
+        message: "All fields are required"
       });
       setIsSubmitting(false);
       return;
@@ -53,7 +53,7 @@ const ContactForm = () => {
       setStatus({
         submitted: true,
         success: true,
-        message: "Mesajul a fost trimis! Verificați email-ul pentru confirmare."
+        message: "The message has been sent! Check your email for confirmation."
       });
       form.current.reset();
     } catch (error) {
@@ -61,9 +61,9 @@ const ContactForm = () => {
         submitted: true,
         success: false,
         message:
-          "A apărut o eroare la trimitere. Verificați că toate câmpurile sunt completate corect și încercați din nou." +
+          "An error occurred while sending. Please make sure all fields are filled out correctly and try again." +
           (error?.text?.includes("recipients address is empty") || error?.message?.includes("recipients address is empty")
-            ? " [Destinatarul nu este setat corect în EmailJS. În EmailJS, adaugă variabila to_email în template și setează adresa de email destinatară în câmpul To.]" 
+            ? "The recipient is not set correctly in EmailJS. In EmailJS, add the variable to_email to your template and set the recipient’s email address in the ‘To’ field."
             : error?.text ? ` [${error.text}]` : error?.message ? ` [${error.message}]` : "")
       });
     } finally {
