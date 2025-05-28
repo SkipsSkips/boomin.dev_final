@@ -91,7 +91,7 @@ function App() {
     {
       icon: <Code2 className="w-8 h-8 text-indigo-500" />,
       title: "Custom Websites",
-      price: "€400 – €800",
+      price: "€500 – €1200",
       subtitle: "Modern, responsive websites tailored for your brand",
       bullets: [
         { icon: <Smartphone className="w-5 h-5 text-indigo-400" />, text: "Mobile-Friendly Design" },
@@ -104,7 +104,7 @@ function App() {
     {
       icon: <Paintbrush2 className="w-8 h-8 text-indigo-500" />,
       title: "Website Redesign",
-      price: "€300 – €600",
+      price: "€400 – €800",
       subtitle: "Give your current site a fresh, fast new look",
       bullets: [
         { icon: <Layout className="w-5 h-5 text-indigo-400" />, text: "Improved Layout & UX" },
@@ -118,9 +118,9 @@ function App() {
 
   // Add-ons data
   const addons = [
-    { name: "Hosting & Domain Setup", price: "+€50", icon: <Server className="w-5 h-5 text-indigo-400" /> },
-    { name: "Custom Forms (e.g., Netlify)", price: "+€40", icon: <Mail className="w-5 h-5 text-indigo-400" /> },
-    { name: "Basic Analytics (Plausible)", price: "+€40", icon: <BarChart3 className="w-5 h-5 text-indigo-400" /> },
+    { name: "Hosting & Domain Setup", price: "+€70", icon: <Server className="w-5 h-5 text-indigo-400" /> },
+    { name: "Custom Forms (e.g., Netlify)", price: "+€50", icon: <Mail className="w-5 h-5 text-indigo-400" /> },
+    { name: "Basic Analytics (Plausible)", price: "+€50", icon: <BarChart3 className="w-5 h-5 text-indigo-400" /> },
     { name: "Multi-language (static only)", price: "+€100", icon: <Globe className="w-5 h-5 text-indigo-400" /> }
   ];
 
@@ -282,7 +282,7 @@ function App() {
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">Pricing</h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-                Transparent, modern web design packages for small businesses and professionals
+                Transparent, modern web design packages for small businesses and professionals. Prices depend on the number of pages and the complexity of the design.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-12 md:mb-16">
